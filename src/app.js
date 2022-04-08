@@ -1,10 +1,14 @@
 import express from "express";
+import booksRouter from "./routes/books.routes";
+import usersRouter from "./routes/users.routes";
 
 const app = express();
 
 const port = 3456;
 
 app.use(express.json());
+app.use("/users", usersRouter);
+// app.use("/books", booksRouter);
 
 app.listen(port, () => {
     console.log(`App running at port ${port}.`);
